@@ -1,0 +1,17 @@
+
+Declare honest, industrious, healthy as adjective,
+        dishonest as adjective from (not honest),
+        unhealthy as adjective from (not healthy),
+        grocer, cyclist, person as noun.
+
+Every grocer is a person.
+Every cyclist is a person.
+
+Every honest industrious person is healthy.
+No grocer is healthy.
+Every industrious grocer is honest.
+Every cyclist is industrious.
+Every unhealthy cyclist is dishonest.
+
+Is it true that no grocer is a cyclist?
+

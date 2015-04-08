@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>Common Logic Controlled English</title>
+<script src="runtime/runtime.js" type="text/javascript"></script>
+<script src="clce_l.js" type="text/javascript"></script>
+<script src="dictionary.js" type="text/javascript"></script>
+<script src="clce_parser.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+alert = function (s) { }
+
+
+var do_test = function() {
+    alert(clce("Every cat is on a mat."));
+}
+var parseInput = function() {
+  var text = document.form1.input.value;
+  var result = clce(text);
+  document.form1.output.value = result;
+}
+
+</script>
+</head>
+<body>
+This is a demonstrator of the Sowa's <em>Common Logic Controlled English</em>[<a href="http://www.jfsowa.com/clce/specs.htm">Specs<a>] parser in JavaScript.
+
+Try some of the following examples:
+
+<pre>
+Every cat is on a mat.
+
+Every person has some person as mother.
+
+Some person is between a dog and a blue cat.
+
+If some person x is the mother of a person y,
+then y is a child of x.
+
+Mary gives a dog a juicy steak.
+
+Yojo is a cat.
+
+Some orange cat is on a blue mat.
+
+Is it true that some cat that is not happy is on a mat?
+
+If every cat that is on a mat is happy,
+is it true that some cat that is not happy is on a mat?
+
+</pre>
+<p>Or just try your own sentences</p>
+
+<form name="form1">
+<textarea name="input" cols="60" rows="10"></textarea>
+<br/>
+<input type="button" value="Parse" onclick="javascript:parseInput()"></input>
+</br>
+<textarea name="output" cols="60" rows="10"></textarea>
+<br/>
+This is the dictionary:
+<br/>
+<textarea cols="60" rows="20">   ("mother"        .   FUNCTIONALNOUN-tok)
+   ("father"        .   FUNCTIONALNOUN-tok)
+   ("shape"         .   FUNCTIONALNOUN-tok)
+   ("color"         .   FUNCTIONALNOUN-tok)
+   ("on"            .   PREPOSITION-tok)
+   ("between"       .   PREPOSITION-tok)
+
+   ("child"         .   RELATIONALNOUN-tok)
+   ("parent"         .   RELATIONALNOUN-tok)
+   ("ancestor"         .   RELATIONALNOUN-tok)
+   ("element"         .   RELATIONALNOUN-tok)
+
+   ("object"        .   NOUN-tok)
+   ("pyramid"        .   NOUN-tok)
+   ("block"        .   NOUN-tok)
+   ("number"        .   NOUN-tok)
+   ("supporter"     .   NOUN-tok)
+   ("supportee"     .   NOUN-tok)
+   ("dog"	.     NOUN-tok)
+   ("cat"	.     NOUN-tok)
+   ("mat"	.     NOUN-tok)
+   ("person"    .       NOUN-tok)
+   ("steak"     .       NOUN-tok)
+   ("rock"     .       NOUN-tok)
+   ("place"     .       NOUN-tok)
+   ("pan"     .       NOUN-tok)
+
+   ("orange"    .       ADJECTIVE-tok)
+   ("blue"      .       ADJECTIVE-tok)
+   ("red"       .       ADJECTIVE-tok)
+   ("green"       .       ADJECTIVE-tok)
+   ("happy"     .       ADJECTIVE-tok)
+   ("hard"      .       ADJECTIVE-tok)
+   ("juicy"     .       ADJECTIVE-tok)
+   ("hard"     .       ADJECTIVE-tok)
+   ("prime"     .       ADJECTIVE-tok)
+   ("hot"     .       ADJECTIVE-tok)
+   ("even"     .       ADJECTIVE-tok)
+   ("odd"     .       ADJECTIVE-tok)
+
+   ("give"      .       VERBINF-tok)
+   ("gives"     .       VERBSING-tok)
+   ("gave"      .       VERBPASTPART-tok)
+
+   ("Torsten"   .       NAME-tok)
+   ("Xenia"     .       NAME-tok)
+   ("Yojo"      .       NAME-tok)
+   ("Mary"      .       NAME-tok)
+   ("A"      .       NAME-tok)
+   ("B"      .       NAME-tok)
+   ("C"      .       NAME-tok)
+   ("D"      .       NAME-tok)
+   ("E"      .       NAME-tok)
+   ("F"      .       NAME-tok)
+   ("G"      .       NAME-tok)
+   ("H"      .       NAME-tok)
+
+   ("greater"   .       COMPARATIVE-tok)
+   ("smaller"   .       COMPARATIVE-tok)
+   ("better"    .       COMPARATIVE-tok)
+
+   ("take"      .       VERBINF-tok)
+   ("takes"     .       VERBSING-tok)
+   ("taken"     .       VERBPASTPART-tok)
+</textarea>
+</form>
+
+</body>
+</html>
+
